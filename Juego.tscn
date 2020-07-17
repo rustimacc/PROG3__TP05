@@ -44,4 +44,8 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="spawn powerups" type="Timer" parent="."]
+autostart = true
 [connection signal="timeout" from="spawnear bloques" to="." method="_on_spawnear_bloques_timeout"]
+[connection signal="timeout" from="spawn powerups" to="." method="_on_spawn_powerups_timeout"]

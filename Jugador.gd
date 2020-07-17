@@ -75,8 +75,8 @@ func _on_Area2D_area_entered(area):
 	#al colisionar con arma, el personaje dispara un perdio de tiempo
 	if area.is_in_group("arma"):
 		arma=true
+		area.queue_free()
 		$Disparo.start()
-		print("arma activada")
 	#al colisionar con congelador, se detiene se congela el personaje
 	if area.is_in_group("congelador"):
 		area.queue_free()
