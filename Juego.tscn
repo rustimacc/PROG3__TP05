@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pared.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego.gd" type="Script" id=3]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 1.0
+
+[node name="Juego" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Jugador" parent="." instance=ExtResource( 1 )]
+position = Vector2( 485.632, 315.239 )
+z_index = -1
+physics_material_override = SubResource( 1 )
+DireLateral = 50
+
+[node name="Pared" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1019.45, 261.157 )
+
+[node name="Pared2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0.533508, 299.248 )
+
+[node name="spawnear bloques" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="textoPuntos" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 841.269
+margin_top = 8.81167
+margin_right = -30.7313
+margin_bottom = -534.188
+rect_scale = Vector2( 0.913986, 0.978943 )
+text = "saltos: 0"
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="spawnear bloques" to="." method="_on_spawnear_bloques_timeout"]

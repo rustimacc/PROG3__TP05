@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/PARCELA RELLENA.png" type="Texture" id=1]
+[ext_resource path="res://Jugador.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.807843, 0.0784314, 0.0784314, 1 )
+
+[node name="Jugador" type="RigidBody2D"]
+mode = 2
+gravity_scale = 6.0
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 1.0
+script = ExtResource( 2 )
+DireLateral = 80
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="Coll" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+polygon = PoolVector2Array( 172.113, 1.7795, 174.064, -91.3664, 4.34082, -250.272, -155.988, -78.7973, -157.703, 86.6761, -5.94763, 243.576, 162.955, 90.1056 )
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Collarea" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 172.113, 1.7795, 174.064, -91.3664, 4.34082, -250.272, -155.988, -78.7973, -157.703, 86.6761, -5.94763, 243.576, 162.955, 90.1056 )
+
+[node name="Disparo" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="pos bala" type="Position2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="Congelado" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BarraCongelado" type="ProgressBar" parent="."]
+margin_left = -27.4604
+margin_top = 26.7248
+margin_right = 27.5396
+margin_bottom = 40.7248
+custom_styles/fg = SubResource( 1 )
+max_value = 5.0
+value = 5.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="." to="." method="_on_Jugador_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Disparo" to="." method="_on_Disparo_timeout"]
+[connection signal="timeout" from="Congelado" to="." method="_on_Congelado_timeout"]
