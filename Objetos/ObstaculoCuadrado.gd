@@ -1,4 +1,4 @@
-extends "res://obstaculo.gd"
+extends "res://Objetos/obstaculo.gd"
 
 
 

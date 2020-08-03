@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/flechas 2.png" type="Texture" id=1]
+[ext_resource path="res://Shaders/Flechas moviles.shader" type="Shader" id=2]
+[ext_resource path="res://Objetos/pared.gd" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/dire = Vector2( -1, 0 )
+shader_param/espejado = 1.0
+shader_param/cantidadFlechasVerticales = 8.0
+shader_param/vel = 1.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.8333, 375.361 )
+
+[node name="Pared" type="RigidBody2D" groups=[
+"pared",
+]]
+mode = 1
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 2.19809, -2.05805 )
+scale = Vector2( 0.0534352, 1.05819 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Coll" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="cambiardireccionflecas" from="." to="." method="_on_Pared_cambiardireccionflecas"]

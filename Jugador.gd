@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var balas=preload("res://bala.tscn")
+var balas=preload("res://Objetos/bala.tscn")
 
 #determina la direccion del salto
 export  var DireLateral:int
@@ -49,6 +49,10 @@ func Movimiento():
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
 		DireLateral*=-1
+		if DireLateral>0:
+			body.emit_signal("cambiardireccionflecas",-1)
+		else:
+			body.emit_signal("cambiardireccionflecas",1)
 		print("colision")
 
 

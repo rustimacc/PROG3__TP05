@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var cuadrado=preload("res://cuadrado.tscn")
+var cuadrado=preload("res://Objetos/cuadrado.tscn")
 
 var vel=50
 

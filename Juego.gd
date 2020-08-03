@@ -1,10 +1,10 @@
 extends Node2D
 
-var bloque=preload("res://obstaculo.tscn")
-var bloqueCuadrado=preload("res://ObstaculoCuadrado.tscn")
+var bloque=preload("res://Objetos/obstaculo.tscn")
+var bloqueCuadrado=preload("res://Objetos/ObstaculoCuadrado.tscn")
 
-var BalaPower=preload("res://PowerUpArma.tscn")
-var CongeladorPower=preload("res://Congelador.tscn")
+var BalaPower=preload("res://Objetos/PowerUpArma.tscn")
+var CongeladorPower=preload("res://Objetos/Congelador.tscn")
 
 var tiempoSpawnPowerUp
 
