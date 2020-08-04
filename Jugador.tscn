@@ -1,10 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/PARCELA RELLENA.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
+[ext_resource path="res://Shaders/outline.shader" type="Shader" id=3]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/anchoLinea = 4.0
+shader_param/color_outline = null
+shader_param/multiplicadorTiempo = 1.0
+
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.807843, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "choquePared"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/anchoLinea")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 30.0, 4.0 ]
+}
 
 [node name="Jugador" type="RigidBody2D"]
 mode = 2
@@ -16,6 +39,7 @@ script = ExtResource( 2 )
 DireLateral = 80
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
 scale = Vector2( 0.1, 0.1 )
 z_index = -1
 texture = ExtResource( 1 )
@@ -46,13 +70,16 @@ margin_left = -27.4604
 margin_top = 26.7248
 margin_right = 27.5396
 margin_bottom = 40.7248
-custom_styles/fg = SubResource( 1 )
+custom_styles/fg = SubResource( 2 )
 max_value = 5.0
 value = 5.0
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+anims/choquePared = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Jugador_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Disparo" to="." method="_on_Disparo_timeout"]

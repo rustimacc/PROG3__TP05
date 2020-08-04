@@ -10,13 +10,17 @@ var delay =0.2
 var controlesActivos
 var congelado
 var arma
+var animator
 
 func _ready():
 	DireLateral=50
 	set_bounce(1)
 	controlesActivos=true
 	congelado=false
+	
+	animator=$Animator
 	$BarraCongelado.visible=congelado
+	
 	timer=Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(delay)
@@ -49,10 +53,11 @@ func Movimiento():
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
 		DireLateral*=-1
+		animator.play("choquePared")
 		if DireLateral>0:
-			body.emit_signal("cambiardireccionflecas",-1)
+			body.emit_signal("cambiardireccionflecas",1.0)
 		else:
-			body.emit_signal("cambiardireccionflecas",1)
+			body.emit_signal("cambiardireccionflecas",-1.0)
 		print("colision")
 
 
@@ -101,6 +106,7 @@ func _on_Area2D_area_entered(area):
 #Barra que muestra el tiempo que le queda congelado
 func BarraCongeladaUI():
 	$BarraCongelado.visible=true
+	
 	$BarraCongelado.value=$Congelado.get_time_left()
 
 

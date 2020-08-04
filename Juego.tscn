@@ -12,16 +12,16 @@ bounce = 1.0
 script = ExtResource( 3 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 485.632, 315.239 )
+position = Vector2( 500, 300 )
 z_index = -1
 physics_material_override = SubResource( 1 )
 DireLateral = 50
 
 [node name="Pared" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1019.45, 261.157 )
+position = Vector2( 750, 300 )
 
 [node name="Pared2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0.533508, 299.248 )
+position = Vector2( 250, 300 )
 
 [node name="spawnear bloques" type="Timer" parent="."]
 wait_time = 4.0

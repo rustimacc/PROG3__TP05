@@ -2,10 +2,12 @@ shader_type canvas_item;
 
 uniform float anchoLinea : hint_range(0.0,30.0);
 uniform vec4 color_outline : hint_color;
+uniform float multiplicadorTiempo;
 
 void fragment(){
 	
-	float tamanio= anchoLinea * 1.0 / float (textureSize(TEXTURE,0).x);
+	//float tamanio= anchoLinea * 1.0*cos(TIME*multiplicadorTiempo) / float (textureSize(TEXTURE,0).x); EFECTO CONTRACCION DEL OUTLINE
+	float tamanio= anchoLinea * 3.0 / float (textureSize(TEXTURE,0).x);
 	
 	vec4 colortex=texture(TEXTURE,UV);
 	float alfa=-8.0*colortex.a;

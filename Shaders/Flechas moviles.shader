@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform vec2 dire=vec2(-1.0,0.0);
-uniform float espejado=1;
+uniform float espejado=1.0;
 uniform float cantidadFlechasVerticales=8;
 uniform float vel=1;
 
