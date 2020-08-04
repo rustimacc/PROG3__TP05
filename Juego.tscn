@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/pared.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego.gd" type="Script" id=3]
 [ext_resource path="res://CanvasLayer.gd" type="Script" id=4]
+[ext_resource path="res://Camera2D.gd" type="Script" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 1.0
@@ -12,16 +13,16 @@ bounce = 1.0
 script = ExtResource( 3 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
-position = Vector2( 500, 300 )
+position = Vector2( 300, 300 )
 z_index = -1
 physics_material_override = SubResource( 1 )
 DireLateral = 50
 
 [node name="Pared" parent="." instance=ExtResource( 2 )]
-position = Vector2( 750, 300 )
+position = Vector2( 571.29, 300 )
 
 [node name="Pared2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 250, 300 )
+position = Vector2( 24.5253, 300 )
 
 [node name="spawnear bloques" type="Timer" parent="."]
 wait_time = 4.0
@@ -33,10 +34,10 @@ script = ExtResource( 4 )
 [node name="textoPuntos" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 841.269
-margin_top = 8.81167
-margin_right = -30.7313
-margin_bottom = -534.188
+margin_left = 467.027
+margin_top = 1.29235
+margin_right = -68.9727
+margin_bottom = -541.707
 rect_scale = Vector2( 0.913986, 0.978943 )
 text = "saltos: 0"
 valign = 1
@@ -47,5 +48,17 @@ __meta__ = {
 
 [node name="spawn powerups" type="Timer" parent="."]
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 5 )
+magnitud = 4
+
+[node name="timer shake" type="Timer" parent="Camera2D"]
+wait_time = 0.2
+one_shot = true
 [connection signal="timeout" from="spawnear bloques" to="." method="_on_spawnear_bloques_timeout"]
 [connection signal="timeout" from="spawn powerups" to="." method="_on_spawn_powerups_timeout"]
+[connection signal="Shake" from="Camera2D" to="Camera2D" method="_on_Camera2D_Shake"]
+[connection signal="timeout" from="Camera2D/timer shake" to="Camera2D" method="_on_timer_shake_timeout"]

@@ -53,6 +53,7 @@ func Movimiento():
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
 		DireLateral*=-1
+		get_parent().get_node("Camera2D").emit_signal("Shake")
 		animator.play("choquePared")
 		if DireLateral>0:
 			body.emit_signal("cambiardireccionflecas",1.0)
