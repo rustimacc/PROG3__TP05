@@ -2,13 +2,25 @@ extends KinematicBody2D
 
 var vel=400
 var direccion=Vector2()
-# Called when the node enters the scene tree for the first time.
+var timer
+export var tiempodestruir=0.1
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 func _physics_process(delta):
 	
-	direccion=Vector2(0,-1).normalized()*vel
+	direccion=direccion.normalized()*vel
 	
 	move_and_slide(direccion)
+
+
+
+func _on_destruir_timeout():
+	queue_free()
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("pared"):
+		queue_free()

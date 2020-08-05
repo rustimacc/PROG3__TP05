@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/PARCELA RELLENA.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
@@ -38,7 +38,35 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.11, 0.11 ), Vector2( 0.1, 0.1 ) ]
+"values": [ Vector2( 0.11, 0.06 ), Vector2( 0.1, 0.1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "salto"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.11 ), Vector2( 0.09, 0.13 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/anchoLinea")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.0 ]
 }
 
 [node name="Jugador" type="RigidBody2D"]
@@ -70,8 +98,17 @@ polygon = PoolVector2Array( 172.113, 1.7795, 174.064, -91.3664, 4.34082, -250.27
 wait_time = 4.0
 one_shot = true
 
-[node name="pos bala" type="Position2D" parent="."]
+[node name="pos balaarriba" type="Position2D" parent="."]
 position = Vector2( 0, -32 )
+
+[node name="pos balaabajo" type="Position2D" parent="."]
+position = Vector2( 0, 32 )
+
+[node name="pos baladerecha" type="Position2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="pos balaizquierdo" type="Position2D" parent="."]
+position = Vector2( -32, 0 )
 
 [node name="Congelado" type="Timer" parent="."]
 wait_time = 5.0
@@ -92,6 +129,7 @@ __meta__ = {
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/choquePared = SubResource( 3 )
+anims/salto = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Jugador_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Disparo" to="." method="_on_Disparo_timeout"]

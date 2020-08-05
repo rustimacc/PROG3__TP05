@@ -12,11 +12,5 @@ script = ExtResource( 2 )
 [node name="Cuadrado2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, 0 )
 
-[node name="Cuadrado3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 0 )
-
-[node name="Cuadrado4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -128, 0 )
-
 [node name="Cuadrado5" parent="." instance=ExtResource( 1 )]
 position = Vector2( -64, 0 )

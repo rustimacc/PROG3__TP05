@@ -17,8 +17,6 @@ func EstablecerRotacion():
 		set_rotation_degrees(0)
 	else:
 		set_rotation_degrees(90)
-		$Cuadrado3.queue_free()
-		$Cuadrado4.queue_free()
 	
 	
 func _physics_process(delta):

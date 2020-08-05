@@ -47,13 +47,15 @@ func _physics_process(delta):
 func Movimiento():
 	if Input.is_action_just_pressed("salto"):
 		apply_central_impulse(Vector2(DireLateral,-300))
+		animator.play("salto")
 		VariablesGlobales.puntos+=1
 	global_position.y=clamp(global_position.y,-30,630)
 
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
-		DireLateral*=-1
-		get_parent().get_node("Camera2D").emit_signal("Shake")
+		DireLateral*=-1#cambiar direccion		
+		get_parent().get_node("Camera2D").emit_signal("Shake")#shake
+		VariablesGlobales.FrenarTiempo(0.05,0.6)#efecto congelar tiempo
 		animator.play("choquePared")
 		if DireLateral>0:
 			body.emit_signal("cambiardireccionflecas",1.0)
@@ -64,9 +66,26 @@ func _on_Jugador_body_entered(body):
 
 func Disparando():
 	if disparar:
-		var bala=balas.instance()
-		bala.position=$"pos bala".global_position
-		get_parent().add_child(bala)
+		var balaarriba=balas.instance()
+		var balaabajo=balas.instance()
+		var baladerecha=balas.instance()
+		var balaizquierda=balas.instance()
+		#bala arriba
+		balaarriba.direccion=Vector2(0,-1)
+		balaarriba.position=$"pos balaarriba".global_position
+		get_parent().add_child(balaarriba)
+		#bala abajo
+		balaabajo.direccion=Vector2(0,1)
+		balaabajo.position=$"pos balaabajo".global_position
+		get_parent().add_child(balaabajo)
+		#bala derecha
+		baladerecha.direccion=Vector2(1,0)
+		baladerecha.position=$"pos baladerecha".global_position
+		get_parent().add_child(baladerecha)
+		#bala izquierda
+		balaizquierda.direccion=Vector2(-1,0)
+		balaizquierda.position=$"pos balaizquierdo".global_position
+		get_parent().add_child(balaizquierda)
 		print("bala creada")
 		disparar=false
 		timer.start()

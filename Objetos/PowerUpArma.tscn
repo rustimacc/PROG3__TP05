@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objetos/powerup.gd" type="Script" id=1]
 [ext_resource path="res://grafico.png" type="Texture" id=2]
+[ext_resource path="res://Objetos/TweenPowerup.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.0466, 24.6859 )
@@ -18,3 +19,6 @@ shape = SubResource( 1 )
 modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+script = ExtResource( 3 )

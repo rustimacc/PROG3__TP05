@@ -1,6 +1,5 @@
 extends Area2D
 
-
 func _ready():
 	var t = Timer.new()
 	t.set_wait_time(5)
@@ -10,5 +9,4 @@ func _ready():
 	yield(t, "timeout")
 	queue_free()
 	pass # Replace with function body.
-
 

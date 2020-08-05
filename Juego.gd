@@ -31,12 +31,12 @@ func SpawnearPowerUps():
 		if tipo>=50:
 			var congelador=CongeladorPower.instance()
 			add_child(congelador)
-			congelador.global_position=Vector2(rand_range(192,830),rand_range(100,550))
+			congelador.global_position=Vector2(rand_range(80,500),rand_range(100,550))
 			
 		else:
 			var arma=BalaPower.instance()
 			add_child(arma)
-			arma.global_position=Vector2(rand_range(192,830),rand_range(100,550))
+			arma.global_position=Vector2(rand_range(80,500),rand_range(100,550))
 			
 		tiempoSpawnPowerUp=rand_range(5,10)
 		$"spawn powerups".wait_time=tiempoSpawnPowerUp
@@ -53,12 +53,32 @@ func _on_spawnear_bloques_timeout():
 	if tipoBloque==0:
 		var bloquecito=bloque.instance()
 		add_child(bloquecito)
-		bloquecito.global_position=Vector2(rand_range(192,830),-250)
+		bloquecito.global_position=Vector2(RandPosBloque())
+		RandPosBloque()
 	elif tipoBloque==1:
 		var bloque2=bloqueCuadrado.instance()
 		add_child(bloque2)
-		bloque2.global_position=Vector2(rand_range(192,830),-250)
+		bloque2.global_position=Vector2(RandPosBloque())
+		RandPosBloque()
 
+func RandPosBloque()->Vector2:
+	var numaleatorio=randi()%3
+	var pos
+	
+	if(numaleatorio==0):
+		pos =Vector2(150,-250)
+		print(pos)
+		return pos
+	if(numaleatorio==1):
+		pos =Vector2(300,-250)
+		print(pos)
+		return pos
+	if(numaleatorio==2):
+		pos =Vector2(450,-250)
+		print(pos)
+		return pos
+	
+	return pos
 
 func _on_spawn_powerups_timeout():
 	SpawnearPowerUps()
