@@ -48,12 +48,14 @@ func Movimiento():
 	if Input.is_action_just_pressed("salto"):
 		apply_central_impulse(Vector2(DireLateral,-300))
 		animator.play("salto")
+		get_node("Salto").play()
 		VariablesGlobales.puntos+=1
 	global_position.y=clamp(global_position.y,-30,630)
 
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
-		DireLateral*=-1#cambiar direccion		
+		DireLateral*=-1#cambiar direccion
+		get_node("CoquePared").play()
 		get_parent().get_node("Camera2D").emit_signal("Shake")#shake
 		VariablesGlobales.FrenarTiempo(0.05,0.6)#efecto congelar tiempo
 		animator.play("choquePared")
@@ -88,6 +90,7 @@ func Disparando():
 		get_parent().add_child(balaizquierda)
 		print("bala creada")
 		disparar=false
+		get_node("Sonidos disparo").play()
 		timer.start()
 
 
