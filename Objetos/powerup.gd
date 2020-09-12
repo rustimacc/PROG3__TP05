@@ -1,6 +1,9 @@
 extends Area2D
 
+var animator
+
 func _ready():
+	$animator.play("idle")
 	var t = Timer.new()
 	t.set_wait_time(5)
 	t.set_one_shot(true)

@@ -1,53 +1,127 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/pared.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego.gd" type="Script" id=3]
-[ext_resource path="res://CanvasLayer.gd" type="Script" id=4]
+[ext_resource path="res://Control.gd" type="Script" id=4]
 [ext_resource path="res://Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://grafico.png" type="Texture" id=6]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 1.0
 
 [node name="Juego" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
+pause_mode = 2
 position = Vector2( 300, 300 )
 z_index = -1
 physics_material_override = SubResource( 1 )
 DireLateral = 50
 
 [node name="Pared" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
 position = Vector2( 571.29, 300 )
 
 [node name="Pared2" parent="." instance=ExtResource( 2 )]
+pause_mode = 2
 position = Vector2( 24.5253, 300 )
 
 [node name="spawnear bloques" type="Timer" parent="."]
+pause_mode = 2
 wait_time = 4.0
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource( 4 )
+[node name="spawn powerups" type="Timer" parent="."]
+pause_mode = 2
+autostart = true
 
-[node name="textoPuntos" type="Label" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 467.027
+margin_right = 600.0
+margin_bottom = 600.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textoPuntos" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 476.027
 margin_top = 1.29235
-margin_right = -68.9727
-margin_bottom = -541.707
+margin_right = -23.973
+margin_bottom = -548.708
 rect_scale = Vector2( 0.913986, 0.978943 )
-text = "saltos: 0"
+text = "puntos: 0"
 valign = 1
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="spawn powerups" type="Timer" parent="."]
-autostart = true
+[node name="Manue Paus" type="Control" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/Manue Paus"]
+modulate = Color( 0.156863, 0.00784314, 0.00784314, 0.278431 )
+position = Vector2( 100, 100 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 6 )
+
+[node name="Reiniciar" type="Button" parent="Control/Manue Paus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -17.0306
+margin_right = 50.0
+margin_bottom = 12.9694
+text = "Reiniciar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Salir" type="Button" parent="Control/Manue Paus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = 32.652
+margin_right = 50.0
+margin_bottom = 62.652
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="puntajefinal" type="Label" parent="Control/Manue Paus"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 50.0
+text = "olala danet"
+align = 1
+valign = 1
+uppercase = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -60,5 +134,8 @@ wait_time = 0.2
 one_shot = true
 [connection signal="timeout" from="spawnear bloques" to="." method="_on_spawnear_bloques_timeout"]
 [connection signal="timeout" from="spawn powerups" to="." method="_on_spawn_powerups_timeout"]
+[connection signal="pressed" from="Control/Manue Paus/Reiniciar" to="Control" method="_on_Reiniciar_pressed"]
+[connection signal="pressed" from="Control/Manue Paus/Salir" to="Control" method="_on_Salir_pressed"]
 [connection signal="Shake" from="Camera2D" to="Camera2D" method="_on_Camera2D_Shake"]
+[connection signal="ShakeMuerte" from="Camera2D" to="Camera2D" method="_on_Camera2D_ShakeMuerte"]
 [connection signal="timeout" from="Camera2D/timer shake" to="Camera2D" method="_on_timer_shake_timeout"]

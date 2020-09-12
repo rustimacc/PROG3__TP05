@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Sprites/PARCELA RELLENA.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sonidos/choque pared.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sonidos/disparo.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sonidos/powerup 1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sonidos/muerte.wav" type="AudioStream" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -46,7 +47,34 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "salto"
+resource_name = "morir"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.11 ), Vector2( 0.1, 0.11 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.996078, 0.00392157, 0.00392157, 1 ), Color( 0.917647, 0.917647, 0.917647, 1 ), Color( 1, 0, 0, 1 ), Color( 0.917647, 0.917647, 0.917647, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
@@ -84,7 +112,7 @@ DireLateral = 80
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 1 )
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.1, 0.11 )
 z_index = -1
 texture = ExtResource( 1 )
 
@@ -133,7 +161,8 @@ __meta__ = {
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 anims/choquePared = SubResource( 3 )
-anims/salto = SubResource( 4 )
+anims/morir = SubResource( 4 )
+anims/salto = SubResource( 5 )
 
 [node name="Salto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -146,6 +175,9 @@ stream = ExtResource( 6 )
 
 [node name="Powerup1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="morir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 [connection signal="body_entered" from="." to="." method="_on_Jugador_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Disparo" to="." method="_on_Disparo_timeout"]

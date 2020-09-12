@@ -42,6 +42,9 @@ func _physics_process(delta):
 		Disparando()
 	if congelado:
 		BarraCongeladaUI()
+	if global_position.y>630:
+		tocarfondo()
+	
 	pass
 
 func Movimiento():
@@ -50,7 +53,7 @@ func Movimiento():
 		animator.play("salto")
 		get_node("Salto").play()
 		VariablesGlobales.puntos+=1
-	global_position.y=clamp(global_position.y,-30,630)
+	global_position.y=clamp(global_position.y,-30,632)
 
 func _on_Jugador_body_entered(body):
 	if body.is_in_group("pared"):
@@ -103,6 +106,13 @@ func _on_Congelado_timeout():
 	$BarraCongelado.visible=false
 	set_sleeping(false)
 
+func tocarfondo():
+	if controlesActivos:
+		get_node("morir").play()
+	controlesActivos=false
+	
+	get_parent().Perder()
+
 func _on_Area2D_area_entered(area):
 	#al colisionar con arma, el personaje dispara un perdio de tiempo
 	if area.is_in_group("arma"):
@@ -121,10 +131,10 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("danio"):
 		controlesActivos=false
 		$Area2D.disconnect("area_entered",self,"_on_Area2D_area_entered")
-		apply_central_impulse(Vector2(0,-400))
-		VariablesGlobales.perder=true
-		VariablesGlobales.FrenarTiempo(1.5,.5)
-		VariablesGlobales.MaximoPuntaje()
+		apply_central_impulse(Vector2(0,-250))
+		animator.play("morir")
+		get_node("morir").play()
+		get_parent().Perder()
 
 #Barra que muestra el tiempo que le queda congelado
 func BarraCongeladaUI():

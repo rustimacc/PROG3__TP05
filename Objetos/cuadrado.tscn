@@ -3,6 +3,8 @@
 [ext_resource path="res://Objetos/cuadrado.gd" type="Script" id=1]
 [ext_resource path="res://grafico.png" type="Texture" id=2]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50.1955, 50.1505 )
 

@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ControlMainmenu.gd" type="Script" id=1]
+[ext_resource path="res://Shaders/Flechas moviles.shader" type="Shader" id=2]
+[ext_resource path="res://Juego.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/flechas 2.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/dire = Vector2( -1, 0 )
+shader_param/espejado = 1.0
+shader_param/cantidadFlechasVerticales = 3.0
+shader_param/vel = 0.2
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/dire = Vector2( -1, 0 )
+shader_param/espejado = -1.0
+shader_param/cantidadFlechasVerticales = 3.0
+shader_param/vel = 0.2
+
+[node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Escenajuego = ExtResource( 3 )
+
+[node name="pared izquierda" type="TextureRect" parent="Control"]
+self_modulate = Color( 0.317647, 0.298039, 0.666667, 1 )
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 150.0
+margin_bottom = 600.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pared derecha" type="TextureRect" parent="Control"]
+self_modulate = Color( 0.317647, 0.298039, 0.666667, 1 )
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 446.66
+margin_top = 3.886
+margin_right = 596.66
+margin_bottom = 603.886
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 175.0
+margin_top = 100.0
+margin_right = 425.0
+margin_bottom = 500.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Jugar" type="Button" parent="Control/VBoxContainer"]
+margin_top = 155.0
+margin_right = 250.0
+margin_bottom = 175.0
+text = "Jugar"
+
+[node name="Salir" type="Button" parent="Control/VBoxContainer"]
+margin_top = 225.0
+margin_right = 250.0
+margin_bottom = 245.0
+text = "Salir"
+[connection signal="pressed" from="Control/VBoxContainer/Jugar" to="Control" method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Salir" to="Control" method="_on_Salir_pressed"]

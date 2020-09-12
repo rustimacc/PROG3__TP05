@@ -1,7 +1,7 @@
 extends Camera2D
 
 signal Shake()
-
+signal ShakeMuerte()
 var time=0
 export var magnitud=5
 
@@ -29,3 +29,5 @@ func _on_timer_shake_timeout():
 	set_process(false)
 	set_offset(Vector2.ZERO)
 	pass # Replace with function body.
+
+

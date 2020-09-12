@@ -8,10 +8,15 @@ var CongeladorPower=preload("res://Objetos/Congelador.tscn")
 
 var tiempoSpawnPowerUp
 
+var jugadormuerto
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	VariablesGlobales.perder=true
+	VariablesGlobales.perder=false
 	VariablesGlobales.puntos=0
+	
+	#una cámara lenta que da tiempo de reaccion al jugador y queda piola
+	VariablesGlobales.FrenarTiempo(.2,.5)
+	
 	
 	tiempoSpawnPowerUp=rand_range(5,15)
 	pass # Replace with function body.
@@ -19,10 +24,21 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("reiniciar"):
 		reiniciarNivel()
-	pass
+	if Input.is_action_just_pressed("pausa"):
+		Pausa()
 
 func reiniciarNivel():
 	get_tree().reload_current_scene()
+	get_tree().paused=false
+
+func Pausa():
+	get_tree().paused=!get_tree().paused
+	
+	if get_tree().paused:
+		$"Control/Manue Paus".visible=true
+	else:
+		$"Control/Manue Paus".visible=false
+	
 
 func SpawnearPowerUps():
 	var probabilidad=rand_range(0,100)
@@ -48,7 +64,7 @@ func SpawnearPowerUps():
 	pass
 
 func _on_spawnear_bloques_timeout():
-	print("funciona reloj")
+	
 	var tipoBloque=randi()%2
 	if tipoBloque==0:
 		var bloquecito=bloque.instance()
@@ -80,6 +96,22 @@ func RandPosBloque()->Vector2:
 	
 	return pos
 
+func Perder():
+	if !VariablesGlobales.perder:
+		$Camera2D.magnitud=13
+		get_node("Camera2D").emit_signal("Shake")#shake
+	VariablesGlobales.perder=true
+	VariablesGlobales.FrenarTiempo(1,.5)
+	VariablesGlobales.MaximoPuntaje()
+	yield(get_tree().create_timer(.8), "timeout")
+	get_node("Control/Manue Paus").visible=true
+	get_node("Control/Manue Paus/puntajefinal").visible=true
+	if VariablesGlobales.record:
+		get_node("Control/Manue Paus/puntajefinal").set_text("RECORD!!!! "+str(VariablesGlobales.puntos))
+	else:
+		get_node("Control/Manue Paus/puntajefinal").set_text("Puntos: "+str(VariablesGlobales.puntos)+"\n"+"Puntaje máximo: "+str(VariablesGlobales.puntajeMaximo))
+
 func _on_spawn_powerups_timeout():
-	SpawnearPowerUps()
+	if !VariablesGlobales.perder:
+		SpawnearPowerUps()
 	pass # Replace with function body.

@@ -3,6 +3,8 @@
 [ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/ObstaculoCuadrado.gd" type="Script" id=2]
 
+
+
 [node name="ObstaculoCuadrado" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
