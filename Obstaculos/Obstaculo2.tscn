@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objetos/obstaculo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=3]
+[ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=4]
+
+[node name="Obstaculo2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="obstaculoLinea3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512.626, 206.09 )
+
+[node name="obstaculoLinea2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 249.276, 425.333 )
+
+[node name="obstaculoLinea" parent="." instance=ExtResource( 2 )]
+position = Vector2( 143.618, 92.7495 )
+
+[node name="Congelador" parent="obstaculoLinea" instance=ExtResource( 1 )]
+position = Vector2( 55.955, 161.548 )
+
+[node name="moneda" parent="." instance=ExtResource( 4 )]
+position = Vector2( 117.185, 315.589 )
+
+[node name="moneda2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 77.1848, 315.589 )
+
+[node name="moneda7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 117.185, 365.589 )
+
+[node name="moneda6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 77.1848, 365.589 )
+
+[node name="moneda4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 377.35, 65.6 )
+
+[node name="moneda3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 337.35, 65.6 )
+
+[node name="moneda9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 377.35, 115.6 )
+
+[node name="moneda8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 337.35, 115.6 )
+
+[node name="moneda12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 460, 65.6 )
+
+[node name="moneda5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 420, 65.6 )
+
+[node name="moneda11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 460, 115.6 )
+
+[node name="moneda10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 420, 115.6 )

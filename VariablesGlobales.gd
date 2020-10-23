@@ -4,12 +4,14 @@ var puntos
 var puntajeMaximo
 var perder
 var record
+var spawnearObs
 
 func _ready():
 	puntajeMaximo=0
 	puntos=0
 	perder=false
 	record=false
+	spawnearObs=true
 	pass # Replace with function body.
 
 #comprar puntaje actual con el puntaje maximo alcanzado

@@ -52,7 +52,7 @@ func Movimiento():
 		apply_central_impulse(Vector2(DireLateral,-300))
 		animator.play("salto")
 		get_node("Salto").play()
-		VariablesGlobales.puntos+=1
+		
 	global_position.y=clamp(global_position.y,-30,632)
 
 func _on_Jugador_body_entered(body):
@@ -66,7 +66,7 @@ func _on_Jugador_body_entered(body):
 			body.emit_signal("cambiardireccionflecas",1.0)
 		else:
 			body.emit_signal("cambiardireccionflecas",-1.0)
-		print("colision")
+		#print("colision")
 
 
 func Disparando():
@@ -109,8 +109,7 @@ func _on_Congelado_timeout():
 func tocarfondo():
 	if controlesActivos:
 		get_node("morir").play()
-	controlesActivos=false
-	
+	controlesActivos=false	
 	get_parent().Perder()
 
 func _on_Area2D_area_entered(area):
@@ -135,6 +134,11 @@ func _on_Area2D_area_entered(area):
 		animator.play("morir")
 		get_node("morir").play()
 		get_parent().Perder()
+	if area.is_in_group("moneda"):
+		area.queue_free()
+		VariablesGlobales.puntos+=1
+		get_node("moneda").play()
+		print("punto")
 
 #Barra que muestra el tiempo que le queda congelado
 func BarraCongeladaUI():

@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "rebote"
+length = 7.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cuadrado2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 4.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 150.841, 280 ), Vector2( 245.243, 280 ), Vector2( 245.243, 280 ), Vector2( 150.841, 280 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cuadrado4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 4.5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 448.174, 280 ), Vector2( 346.035, 280 ), Vector2( 346.035, 280 ), Vector2( 448.174, 280 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cuadrado:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50.8412, 280 ), Vector2( 50.8412, 280 ), Vector2( 143.695, 280 ), Vector2( 50.8412, 280 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cuadrado3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 547.4, 280 ), Vector2( 547.4, 280 ), Vector2( 446.809, 280 ), Vector2( 547.4, 280 ) ]
+}
+
+[node name="Obstaculo8" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Cuadrado" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64.1174, 280 )
+
+[node name="Cuadrado2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 245.243, 280 )
+
+[node name="Cuadrado4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 346.035, 280 )
+
+[node name="Cuadrado3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 533.018, 280 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/rebote = SubResource( 1 )

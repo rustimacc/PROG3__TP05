@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
+
+[node name="Obstaculo5" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ObstaculoCuadrado" parent="." instance=ExtResource( 1 )]
+position = Vector2( 161.476, 350.123 )
+
+[node name="ObstaculoCuadrado2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 478.443, 427.664 )
+
+[node name="ObstaculoCuadrado3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 447.154, 121.58 )
