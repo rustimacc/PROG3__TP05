@@ -11,6 +11,7 @@ func _ready():
 	#una cámara lenta que da tiempo de reaccion al jugador y queda piola
 	VariablesGlobales.FrenarTiempo(.2,.5)
 	
+	Engine.time_scale=1;
 	pass # Replace with function body.
 
 func _process(delta):
@@ -29,8 +30,10 @@ func Pausa():
 	
 	if get_tree().paused:
 		$"Control/Manue Paus".visible=true
+		Engine.time_scale=0;
 	else:
 		$"Control/Manue Paus".visible=false
+		Engine.time_scale=1;
 	
 
 

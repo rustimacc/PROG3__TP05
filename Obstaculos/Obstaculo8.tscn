@@ -1,76 +1,253 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Tiles/tile090.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Tiles/tile073.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Tiles/tile018.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Tiles/tile017.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Tiles/tile001.png" type="Texture" id=7]
+[ext_resource path="res://Objetos/pared.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "rebote"
-length = 7.0
+length = 9.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Cuadrado2:position")
+tracks/0/path = NodePath("arriba izq:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 4.5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 4.5, 7.5, 7.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 150.841, 280 ), Vector2( 245.243, 280 ), Vector2( 245.243, 280 ), Vector2( 150.841, 280 ) ]
+"values": [ Vector2( 80, 264 ), Vector2( 80, 264 ), Vector2( 328, 264 ), Vector2( 328, 264 ), Vector2( 80, 264 ), Vector2( 80, 264 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Cuadrado4:position")
+tracks/1/path = NodePath("abajo izq:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5, 4.5, 7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 4.5, 7.5, 7.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 448.174, 280 ), Vector2( 346.035, 280 ), Vector2( 346.035, 280 ), Vector2( 448.174, 280 ) ]
+"values": [ Vector2( 80, 296 ), Vector2( 80, 296 ), Vector2( 328, 296 ), Vector2( 328, 296 ), Vector2( 80, 296 ), Vector2( 80, 296 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Cuadrado:position")
+tracks/2/path = NodePath("Centro arriba:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.5, 3, 4.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 4.2, 4.5, 7.5, 7.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 50.8412, 280 ), Vector2( 50.8412, 280 ), Vector2( 143.695, 280 ), Vector2( 50.8412, 280 ) ]
+"values": [ Vector2( 112, 264 ), Vector2( 112, 264 ), Vector2( 360, 264 ), Vector2( 360, 264 ), Vector2( 360, 264 ), Vector2( 112, 264 ), Vector2( 112, 264 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cuadrado3:position")
+tracks/3/path = NodePath("Centro abajo:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1.5, 3, 4.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 4.2, 4.5, 7.5, 7.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 547.4, 280 ), Vector2( 547.4, 280 ), Vector2( 446.809, 280 ), Vector2( 547.4, 280 ) ]
+"values": [ Vector2( 112, 296 ), Vector2( 112, 296 ), Vector2( 360, 296 ), Vector2( 360, 296 ), Vector2( 360, 296 ), Vector2( 112, 296 ), Vector2( 112, 296 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Centro arriba2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3, 4, 4.5, 7.5, 8.1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, 264 ), Vector2( 144, 264 ), Vector2( 392, 264 ), Vector2( 392, 264 ), Vector2( 392, 264 ), Vector2( 144, 264 ), Vector2( 144, 264 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Centro abajo2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3, 4, 4.5, 7.5, 8.1, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144, 296 ), Vector2( 144, 296 ), Vector2( 392, 296 ), Vector2( 392, 296 ), Vector2( 392, 296 ), Vector2( 144, 296 ), Vector2( 144, 296 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Centro arriba3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3, 3.8, 4.5, 7.5, 8.3, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 176, 264 ), Vector2( 176, 264 ), Vector2( 424, 264 ), Vector2( 424, 264 ), Vector2( 424, 264 ), Vector2( 176, 264 ), Vector2( 176, 264 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Centro abajo3:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3, 3.8, 4.5, 7.5, 8.3, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 176, 296 ), Vector2( 176, 296 ), Vector2( 424, 296 ), Vector2( 424, 296 ), Vector2( 424, 296 ), Vector2( 176, 296 ), Vector2( 176, 296 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Centro arriba4:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3, 3.6, 4.5, 7.5, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 208, 264 ), Vector2( 208, 264 ), Vector2( 456, 264 ), Vector2( 456, 264 ), Vector2( 456, 264 ), Vector2( 208, 264 ), Vector2( 208, 264 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Centro abajo4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 3, 3.6, 4.5, 7.5, 8.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 208, 296 ), Vector2( 208, 296 ), Vector2( 456, 296 ), Vector2( 456, 296 ), Vector2( 456, 296 ), Vector2( 208, 296 ), Vector2( 208, 296 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Centro arriba8:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 3, 3.4, 4.5, 7.5, 8.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240, 264 ), Vector2( 240, 264 ), Vector2( 488, 264 ), Vector2( 488, 264 ), Vector2( 488, 264 ), Vector2( 240, 264 ), Vector2( 240, 264 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Centro abajo8:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 3, 3.4, 4.5, 7.5, 8.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240, 296 ), Vector2( 240, 296 ), Vector2( 488, 296 ), Vector2( 488, 296 ), Vector2( 488, 296 ), Vector2( 240, 296 ), Vector2( 240, 296 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("arriba der:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 3, 3.2, 4.5, 7.5, 8.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 264 ), Vector2( 272, 264 ), Vector2( 520, 264 ), Vector2( 520, 264 ), Vector2( 520, 264 ), Vector2( 272, 264 ), Vector2( 272, 264 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("abajo der:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 3, 3.2, 4.5, 7.5, 8.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 272, 296 ), Vector2( 272, 296 ), Vector2( 520, 296 ), Vector2( 520, 296 ), Vector2( 520, 296 ), Vector2( 272, 296 ), Vector2( 272, 296 ) ]
 }
 
 [node name="Obstaculo8" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 2 )
 
-[node name="Cuadrado" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64.1174, 280 )
+[node name="arriba izq" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 264 )
 
-[node name="Cuadrado2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 245.243, 280 )
+[node name="abajo izq" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 296 )
+texture = ExtResource( 6 )
 
-[node name="Cuadrado4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 346.035, 280 )
+[node name="Centro arriba" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 264 )
+texture = ExtResource( 7 )
 
-[node name="Cuadrado3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 533.018, 280 )
+[node name="Centro abajo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 296 )
+texture = ExtResource( 5 )
+
+[node name="Centro arriba2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 264 )
+texture = ExtResource( 7 )
+
+[node name="Centro abajo2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 296 )
+texture = ExtResource( 5 )
+
+[node name="Centro arriba3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 264 )
+texture = ExtResource( 7 )
+
+[node name="Centro abajo3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 296 )
+texture = ExtResource( 5 )
+
+[node name="Centro arriba4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 264 )
+texture = ExtResource( 7 )
+
+[node name="Centro abajo4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 296 )
+texture = ExtResource( 5 )
+
+[node name="Centro arriba8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 264 )
+texture = ExtResource( 7 )
+
+[node name="Centro abajo8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 296 )
+texture = ExtResource( 5 )
+
+[node name="arriba der" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 264 )
+texture = ExtResource( 3 )
+
+[node name="abajo der" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 296 )
+texture = ExtResource( 4 )
+
+[node name="Pared" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571, 304 )
+
+[node name="Pared2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 24, 304 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "rebote"
 method_call_mode = 1
 anims/rebote = SubResource( 1 )

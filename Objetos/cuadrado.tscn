@@ -1,12 +1,10 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objetos/cuadrado.gd" type="Script" id=1]
-[ext_resource path="res://grafico.png" type="Texture" id=2]
-
-
+[ext_resource path="res://Sprites/Tiles/tile000.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50.1955, 50.1505 )
+extents = Vector2( 16.1942, 16.1462 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "destruir"
@@ -77,7 +75,6 @@ scale_curve = SubResource( 8 )
 color_ramp = SubResource( 4 )
 
 [node name="Cuadrado" type="Sprite"]
-scale = Vector2( 0.5, 0.5 )
 z_index = -5
 texture = ExtResource( 2 )
 script = ExtResource( 1 )

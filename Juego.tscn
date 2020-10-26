@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/pared.tscn" type="PackedScene" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://grafico.png" type="Texture" id=6]
 [ext_resource path="res://Fuentes/pixelmix.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Spawneador.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/fondo.png" type="Texture" id=10]
+[ext_resource path="res://Shaders/scrollingparallax.shader" type="Shader" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 7 )
@@ -18,10 +23,12 @@ font_data = ExtResource( 7 )
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 7 )
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 11 )
+shader_param/dire = Vector2( 0, -1 )
+shader_param/vel = 0.05
 
-[sub_resource type="PhysicsMaterial" id=1]
+[sub_resource type="PhysicsMaterial" id=5]
 bounce = 1.0
 
 [node name="Juego" type="Node2D"]
@@ -46,7 +53,7 @@ margin_top = 0.751991
 margin_right = -47.3699
 margin_bottom = -549.248
 rect_scale = Vector2( 0.913986, 0.978943 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "puntos: 0"
 valign = 1
 uppercase = true
@@ -83,7 +90,7 @@ margin_left = -50.0
 margin_top = -17.0306
 margin_right = 50.0
 margin_bottom = 12.9694
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Reiniciar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -98,7 +105,7 @@ margin_left = -50.0
 margin_top = 32.652
 margin_right = 50.0
 margin_bottom = 62.652
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "Salir"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -111,17 +118,25 @@ anchor_right = 0.5
 margin_left = -100.0
 margin_right = 100.0
 margin_bottom = 50.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "olala danet"
 align = 1
 valign = 1
 uppercase = true
 
+[node name="fondo" type="Sprite" parent="Control"]
+pause_mode = 2
+material = SubResource( 7 )
+position = Vector2( 300, 300 )
+z_index = -10
+z_as_relative = false
+texture = ExtResource( 10 )
+
 [node name="Jugador" parent="." instance=ExtResource( 1 )]
 pause_mode = 2
 position = Vector2( 300, 300 )
 z_index = -1
-physics_material_override = SubResource( 1 )
+physics_material_override = SubResource( 5 )
 DireLateral = 50
 
 [node name="Pared" parent="." instance=ExtResource( 2 )]

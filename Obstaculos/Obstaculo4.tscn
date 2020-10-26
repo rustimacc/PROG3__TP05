@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Objetos/obstaculo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=3]
 
 [node name="Obstaculo4" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="obstaculoLinea" parent="." instance=ExtResource( 1 )]

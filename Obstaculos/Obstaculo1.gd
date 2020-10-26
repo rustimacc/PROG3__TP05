@@ -14,12 +14,12 @@ func _process(delta):
 	global_position+=Vector2(0,1)*vel*delta
 	
 	if(global_position.y>0 ):
-		print("nuevo obj")
+		#print("nuevo obj")
 		if !pasolimite:
 			VariablesGlobales.spawnearObs=true;
 			pasolimite=true
 	if(global_position.y>600):
 		queue_free()
-		print("destruido")
-	print(VariablesGlobales.spawnearObs)
+		#print("destruido")
+	#print(VariablesGlobales.spawnearObs)
 	#print(global_position.y)

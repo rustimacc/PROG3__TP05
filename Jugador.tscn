@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Sprites/PARCELA RELLENA.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/personaje alterna2.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
 [ext_resource path="res://Shaders/outline.shader" type="Shader" id=3]
 [ext_resource path="res://Sonidos/salto 1.wav" type="AudioStream" id=4]
@@ -12,7 +12,7 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
-shader_param/anchoLinea = 4.0
+shader_param/anchoLinea = 0.0
 shader_param/color_outline = null
 shader_param/multiplicadorTiempo = 1.0
 
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 30.0, 4.0 ]
+"values": [ 30.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:scale")
@@ -44,12 +44,12 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.11, 0.06 ), Vector2( 0.1, 0.1 ) ]
+"values": [ Vector2( 0.35, 0.1 ), Vector2( 0.45, 0.45 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 resource_name = "morir"
-length = 2.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -57,10 +57,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9, 2 ),
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.1, 0.11 ), Vector2( 0.1, 0.11 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0.15, 0.15 ), Vector2( 0.1, 0.1 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0.36, 0.365 ), Vector2( 0.45, 0.45 ), Vector2( 0.5, 0.5 ), Vector2( 0.45, 0.45 ), Vector2( 0.45, 0.5 ), Vector2( 0.45, 0.45 ), Vector2( 0.35, 0.35 ), Vector2( 0.2, 0.25 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:modulate")
@@ -73,6 +73,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0.996078, 0.00392157, 0.00392157, 1 ), Color( 0.917647, 0.917647, 0.917647, 1 ), Color( 1, 0, 0, 1 ), Color( 0.917647, 0.917647, 0.917647, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:material:shader_param/anchoLinea")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, 0.0, 8.0, 0.0, 10.0, 0.0, 8.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -87,7 +99,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.1, 0.11 ), Vector2( 0.09, 0.13 ), Vector2( 0.1, 0.1 ) ]
+"values": [ Vector2( 0.45, 0.45 ), Vector2( 0.4, 0.5 ), Vector2( 0.45, 0.45 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:material:shader_param/anchoLinea")
@@ -99,7 +111,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 4.0 ]
+"values": [ 0.0 ]
 }
 
 [node name="Jugador" type="RigidBody2D"]
@@ -112,8 +124,11 @@ script = ExtResource( 2 )
 DireLateral = 80
 
 [node name="Sprite" type="Sprite" parent="."]
+pause_mode = 2
+modulate = Color( 0.996078, 0.00392157, 0.00392157, 1 )
 material = SubResource( 1 )
-scale = Vector2( 0.1, 0.11 )
+position = Vector2( 0.138699, -0.554782 )
+scale = Vector2( 0.45, 0.45 )
 z_index = -1
 texture = ExtResource( 1 )
 

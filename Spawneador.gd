@@ -37,9 +37,9 @@ func spawnObstaculos():
 func _on_spawnear_bloques_timeout():
 	#print("tiempo")
 	while(VariablesGlobales.spawnearObs):
-		var posobj=randi()%9
-		print(posobj)
-		var bloquecito=bloque[7].instance()
+		var posobj=randi()%bloque.size()
+		print(bloque.size())
+		var bloquecito=bloque[posobj].instance()
 		add_child(bloquecito)
 		bloquecito.global_position=Vector2(0,-600)
 		

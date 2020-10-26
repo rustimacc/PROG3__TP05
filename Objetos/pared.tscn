@@ -1,16 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/flechas 2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/flechas nuevas.png" type="Texture" id=1]
 [ext_resource path="res://Shaders/Flechas moviles.shader" type="Shader" id=2]
 [ext_resource path="res://Objetos/pared.gd" type="Script" id=3]
-
-
+[ext_resource path="res://Sprites/bordes.png" type="Texture" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
 shader_param/dire = Vector2( -1, 0 )
 shader_param/espejado = 1.0
-shader_param/cantidadFlechasVerticales = 10.0
+shader_param/cantidadFlechasVerticales = 25.0
 shader_param/vel = 1.0
 
 [sub_resource type="GDScript" id=2]
@@ -33,7 +32,20 @@ extents = Vector2( 24.8333, 375.361 )
 mode = 1
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="borde izq" type="Sprite" parent="."]
+position = Vector2( -61.8773, -4.04218 )
+scale = Vector2( 2.27717, 1.01198 )
+z_index = -5
+texture = ExtResource( 4 )
+
+[node name="borde der" type="Sprite" parent="."]
+position = Vector2( 64.4208, -3.34991 )
+scale = Vector2( 2.27717, 1.01352 )
+z_index = -5
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="flechas" type="Sprite" parent="."]
 material = SubResource( 1 )
 position = Vector2( 2.19809, -2.05805 )
 scale = Vector2( 0.0534352, 1.05819 )

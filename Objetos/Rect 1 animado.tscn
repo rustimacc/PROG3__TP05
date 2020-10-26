@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/Tiles/tile018.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Tiles/tile008.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tiles/tile017.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Tiles/tile025.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Tiles/tile001.png" type="Texture" id=5]
+[ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objetos/obstaculo.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 2.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("arriba izq:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -64, -32 ), Vector2( -32, -16 ), Vector2( -32, -16 ), Vector2( -64, -32 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("abajo izq:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -64, 32 ), Vector2( -32, 16 ), Vector2( -32, 16 ), Vector2( -64, 32 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("arriba derecha:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64, -32 ), Vector2( 32, -16 ), Vector2( 32, -16 ), Vector2( 64, -32 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("abajo derecha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64, 32 ), Vector2( 32, 16 ), Vector2( 32, 16 ), Vector2( 64, 32 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("centro arriba:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -32 ), Vector2( 0, -16 ), Vector2( 0, -16 ), Vector2( 0, -32 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("centro abajo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 32 ), Vector2( 0, 16 ), Vector2( 0, 16 ), Vector2( 0, 32 ) ]
+}
+
+[node name="Rect 1 animado" type="KinematicBody2D"]
+pause_mode = 2
+script = ExtResource( 7 )
+
+[node name="arriba izq" parent="." instance=ExtResource( 6 )]
+position = Vector2( -64, -32 )
+
+[node name="abajo izq" parent="." instance=ExtResource( 6 )]
+position = Vector2( -64, 32 )
+texture = ExtResource( 3 )
+
+[node name="arriba derecha" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, -32 )
+texture = ExtResource( 2 )
+
+[node name="abajo derecha" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 32 )
+texture = ExtResource( 4 )
+
+[node name="centro arriba" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, -32 )
+texture = ExtResource( 5 )
+
+[node name="centro abajo" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+autoplay = "idle"
+anims/idle = SubResource( 1 )

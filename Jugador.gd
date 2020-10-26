@@ -109,7 +109,7 @@ func _on_Congelado_timeout():
 func tocarfondo():
 	if controlesActivos:
 		get_node("morir").play()
-	controlesActivos=false	
+	controlesActivos=false
 	get_parent().Perder()
 
 func _on_Area2D_area_entered(area):
