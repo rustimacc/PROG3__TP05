@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objetos/Obs Simple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=4]
@@ -9,17 +9,14 @@
 pause_mode = 2
 script = ExtResource( 4 )
 
-[node name="Cuadrado" parent="." instance=ExtResource( 1 )]
-position = Vector2( 122.025, 103.895 )
-
-[node name="Cuadrado2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 430.83, 397.736 )
-
-[node name="Cuadrado3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 277.107, 263.059 )
-
 [node name="obstaculoLinea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 458.037, 107.977 )
 
 [node name="ObstaculoCuadrado" parent="obstaculoLinea" instance=ExtResource( 3 )]
 position = Vector2( -306.084, 398.59 )
+
+[node name="Obs Simple" parent="." instance=ExtResource( 1 )]
+position = Vector2( 442.362, 422.43 )
+
+[node name="Obs Simple2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 179.574, 179.999 )

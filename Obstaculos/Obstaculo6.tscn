@@ -14,7 +14,7 @@ script = ExtResource( 2 )
 position = Vector2( 210.274, 381.707 )
 
 [node name="ObstaculoCuadrado" parent="." instance=ExtResource( 3 )]
-position = Vector2( 478.151, 189.184 )
+position = Vector2( 469.252, 248 )
 
 [node name="Rect 1 animado" parent="." instance=ExtResource( 1 )]
 position = Vector2( 187.031, 127.967 )
