@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
+[ext_resource path="res://Objetos/Obs I.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=4]
 
 [node name="Obstaculo7" type="Node2D"]
 pause_mode = 2
@@ -10,8 +12,8 @@ script = ExtResource( 2 )
 [node name="obstaculoLinea3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 184.682, 113.929 )
 
-[node name="obstaculoLinea2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 438.216, 284.185 )
+[node name="Obs I" parent="." instance=ExtResource( 3 )]
+position = Vector2( 440.574, 290.289 )
 
-[node name="obstaculoLinea" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192.084, 458.143 )
+[node name="ObstaculoCuadrado" parent="." instance=ExtResource( 4 )]
+position = Vector2( 179, 459 )

@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/Tiles/tile018.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Tiles/tile017.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Tiles/tile001.png" type="Texture" id=7]
-[ext_resource path="res://Objetos/pared.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "rebote"
@@ -241,13 +241,13 @@ texture = ExtResource( 3 )
 position = Vector2( 272, 296 )
 texture = ExtResource( 4 )
 
-[node name="Pared" parent="." instance=ExtResource( 8 )]
-position = Vector2( 571, 304 )
-
-[node name="Pared2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 24, 304 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "rebote"
 method_call_mode = 1
 anims/rebote = SubResource( 1 )
+
+[node name="Congelador" parent="." instance=ExtResource( 9 )]
+position = Vector2( 168, 384 )
+
+[node name="Congelador2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 448, 384 )

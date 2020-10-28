@@ -3,6 +3,8 @@ extends Node2D
 
 
 var jugadormuerto
+
+var empezar
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	VariablesGlobales.perder=false
@@ -11,7 +13,9 @@ func _ready():
 	#una cámara lenta que da tiempo de reaccion al jugador y queda piola
 	VariablesGlobales.FrenarTiempo(.2,.5)
 	
-	Engine.time_scale=1;
+	#Panel inicio
+	empezar=false
+	Engine.time_scale=0
 	pass # Replace with function body.
 
 func _process(delta):
@@ -19,19 +23,29 @@ func _process(delta):
 		reiniciarNivel()
 	if Input.is_action_just_pressed("pausa"):
 		Pausa()
-	
+	EmpezarPartida()
+
+func EmpezarPartida():
+	if Input.is_action_just_pressed("salto")and !empezar:
+		$"Control/Comenzar a jugar".visible=false;
+		Engine.time_scale=1
+		empezar=true
+	pass
 
 func reiniciarNivel():
 	get_tree().reload_current_scene()
-	get_tree().paused=false
+	empezar=false
+	Engine.time_scale=0
 
 func Pausa():
 	get_tree().paused=!get_tree().paused
 	
 	if get_tree().paused:
+		
 		$"Control/Manue Paus".visible=true
 		Engine.time_scale=0;
 	else:
+		
 		$"Control/Manue Paus".visible=false
 		Engine.time_scale=1;
 	
@@ -45,10 +59,10 @@ func Perder():
 	VariablesGlobales.FrenarTiempo(1,.5)
 	VariablesGlobales.MaximoPuntaje()
 	yield(get_tree().create_timer(.8), "timeout")
-	get_node("Control/Manue Paus").visible=true
-	get_node("Control/Manue Paus/puntajefinal").visible=true
+	get_node("Control/Menu Pausa").visible=true
+	get_node("Control/Menu Pausa/puntajefinal").visible=true
 	if VariablesGlobales.record:
-		get_node("Control/Manue Paus/puntajefinal").set_text("RECORD!!!! "+str(VariablesGlobales.puntos))
+		get_node("Control/Menu Pausa/puntajefinal").set_text("RECORD!!!! "+str(VariablesGlobales.puntos))
 	else:
-		get_node("Control/Manue Paus/puntajefinal").set_text("Puntos: "+str(VariablesGlobales.puntos)+"\n"+"Puntaje máximo: "+str(VariablesGlobales.puntajeMaximo))
+		get_node("Control/Menu Pausa/puntajefinal").set_text("Puntos: "+str(VariablesGlobales.puntos)+"\n"+"Puntaje máximo: "+str(VariablesGlobales.puntajeMaximo))
 
