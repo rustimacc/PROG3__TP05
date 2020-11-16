@@ -5,7 +5,7 @@ extends Node2D
 var jugadormuerto
 
 var empezar
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	VariablesGlobales.perder=false
 	VariablesGlobales.puntos=0
@@ -16,7 +16,7 @@ func _ready():
 	#Panel inicio
 	empezar=false
 	Engine.time_scale=0
-	pass # Replace with function body.
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("reiniciar"):
@@ -54,7 +54,7 @@ func Pausa():
 func Perder():
 	if !VariablesGlobales.perder:
 		$Camera2D.magnitud=13
-		get_node("Camera2D").emit_signal("Shake")#shake
+		get_node("Camera2D").emit_signal("Shake")#shake de la camara
 	VariablesGlobales.perder=true
 	VariablesGlobales.FrenarTiempo(1,.5)
 	VariablesGlobales.MaximoPuntaje()

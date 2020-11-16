@@ -66,7 +66,6 @@ func _on_Jugador_body_entered(body):
 			body.emit_signal("cambiardireccionflecas",1.0)
 		else:
 			body.emit_signal("cambiardireccionflecas",-1.0)
-		#print("colision")
 
 
 func Disparando():

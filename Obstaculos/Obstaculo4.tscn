@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=3]
 [ext_resource path="res://Objetos/Obs Simple.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=6]
 
 [node name="Obstaculo4" type="Node2D"]
 pause_mode = 2
@@ -15,8 +17,35 @@ position = Vector2( 149.232, 449.43 )
 [node name="ObstaculoCuadrado" parent="." instance=ExtResource( 2 )]
 position = Vector2( 147.872, 128.382 )
 
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 408 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 379.727 )
+
+[node name="Area2D4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 348.273 )
+
+[node name="Area2D3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 320 )
+
+[node name="Area2D6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 292.273 )
+
+[node name="Area2D5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 264 )
+
+[node name="Area2D8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 236.273 )
+
 [node name="Obs Simple" parent="." instance=ExtResource( 4 )]
-position = Vector2( 455.316, 165.112 )
+position = Vector2( 305.675, 113.418 )
+
+[node name="Congelador" parent="Obs Simple" instance=ExtResource( 6 )]
+position = Vector2( -6.68021, 336.012 )
+
+[node name="Congelador2" parent="Obs Simple" instance=ExtResource( 6 )]
+position = Vector2( -6.68021, 80.5822 )
 
 [node name="Obs Simple2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 455.316, 363.727 )

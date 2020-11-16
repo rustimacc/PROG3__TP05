@@ -17,43 +17,37 @@ position = Vector2( 249.276, 425.333 )
 position = Vector2( 143.618, 92.7495 )
 
 [node name="Congelador" parent="obstaculoLinea" instance=ExtResource( 1 )]
-position = Vector2( 55.955, 161.548 )
-
-[node name="moneda" parent="." instance=ExtResource( 4 )]
-position = Vector2( 117.185, 315.589 )
-
-[node name="moneda2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 77.1848, 315.589 )
-
-[node name="moneda7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 117.185, 365.589 )
-
-[node name="moneda6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 77.1848, 365.589 )
+position = Vector2( 240.382, 387.25 )
 
 [node name="moneda4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 377.35, 65.6 )
+position = Vector2( 384, 227.073 )
 
 [node name="moneda3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 337.35, 65.6 )
+position = Vector2( 384, 425.333 )
 
 [node name="moneda9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 377.35, 115.6 )
+position = Vector2( 384, 344 )
 
 [node name="moneda8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 337.35, 115.6 )
+position = Vector2( 384, 384 )
 
 [node name="moneda12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 460, 65.6 )
+position = Vector2( 152, 227.073 )
 
 [node name="moneda5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 65.6 )
+position = Vector2( 104, 227.073 )
+
+[node name="moneda13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 152, 256 )
+
+[node name="moneda6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 104, 256 )
 
 [node name="moneda11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 460, 115.6 )
+position = Vector2( 384, 264 )
 
 [node name="moneda10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 420, 115.6 )
+position = Vector2( 384, 304 )
 
 [node name="Obs I" parent="." instance=ExtResource( 5 )]
 position = Vector2( 467.438, 246.073 )

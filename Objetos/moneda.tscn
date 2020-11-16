@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 0.6, 0.6 ), Vector2( 0.5, 0.5 ) ]
 }
 
-[node name="Area2D" type="Area2D" groups=[
+[node name="Moneda" type="Area2D" groups=[
 "moneda",
 ]]
 
