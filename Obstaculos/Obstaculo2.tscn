@@ -1,17 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=3]
 [ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objetos/Obs I.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objetos/Obs +.tscn" type="PackedScene" id=6]
 
 [node name="Obstaculo2" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 3 )
-
-[node name="obstaculoLinea2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 249.276, 425.333 )
 
 [node name="obstaculoLinea" parent="." instance=ExtResource( 2 )]
 position = Vector2( 143.618, 92.7495 )
@@ -34,14 +32,68 @@ position = Vector2( 384, 384 )
 [node name="moneda12" parent="." instance=ExtResource( 4 )]
 position = Vector2( 152, 227.073 )
 
+[node name="moneda15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 227.073 )
+
 [node name="moneda5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 104, 227.073 )
 
 [node name="moneda13" parent="." instance=ExtResource( 4 )]
 position = Vector2( 152, 256 )
 
+[node name="moneda14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 256 )
+
 [node name="moneda6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 104, 256 )
+
+[node name="moneda19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 296, 344 )
+
+[node name="moneda18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272, 344 )
+
+[node name="moneda16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 296, 372.927 )
+
+[node name="moneda7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272, 372.927 )
+
+[node name="moneda22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, 440 )
+
+[node name="moneda21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 440 )
+
+[node name="moneda20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, 468.927 )
+
+[node name="moneda17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 468.927 )
+
+[node name="moneda26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 296, 440 )
+
+[node name="moneda25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272, 440 )
+
+[node name="moneda24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 296, 468.927 )
+
+[node name="moneda23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 272, 468.927 )
+
+[node name="moneda30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, 344 )
+
+[node name="moneda29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 344 )
+
+[node name="moneda28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, 372.927 )
+
+[node name="moneda27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 372.927 )
 
 [node name="moneda11" parent="." instance=ExtResource( 4 )]
 position = Vector2( 384, 264 )
@@ -51,3 +103,6 @@ position = Vector2( 384, 304 )
 
 [node name="Obs I" parent="." instance=ExtResource( 5 )]
 position = Vector2( 467.438, 246.073 )
+
+[node name="Obs +" parent="." instance=ExtResource( 6 )]
+position = Vector2( 240, 408 )

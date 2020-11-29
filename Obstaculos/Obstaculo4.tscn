@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objetos/Rect 1 animado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Objetos/Obs Simple.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objetos/Obs L.tscn" type="PackedScene" id=7]
 
 [node name="Obstaculo4" type="Node2D"]
 pause_mode = 2
@@ -20,32 +21,120 @@ position = Vector2( 147.872, 128.382 )
 [node name="Area2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 298.995, 408 )
 
-[node name="Area2D2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 379.727 )
+[node name="Area2D24" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 429 )
 
-[node name="Area2D4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 348.273 )
+[node name="Area2D27" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 449.43 )
+
+[node name="Area2D14" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 408 )
+
+[node name="Area2D23" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 429 )
+
+[node name="Area2D26" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 449.43 )
+
+[node name="Area2D21" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 408 )
+
+[node name="Area2D22" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 429 )
+
+[node name="Area2D25" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 449.43 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 347.727 )
+
+[node name="Area2D34" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 368.727 )
+
+[node name="Area2D33" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 389.157 )
+
+[node name="Area2D15" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 347.727 )
+
+[node name="Area2D32" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 368.727 )
+
+[node name="Area2D31" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 389.157 )
+
+[node name="Area2D30" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 347.727 )
+
+[node name="Area2D29" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 368.727 )
+
+[node name="Area2D28" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 389.157 )
 
 [node name="Area2D3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 320 )
+position = Vector2( 298.995, 288 )
 
-[node name="Area2D6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 292.273 )
+[node name="Area2D41" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 309 )
 
-[node name="Area2D5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 264 )
+[node name="Area2D40" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 329.43 )
 
-[node name="Area2D8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 298.995, 236.273 )
+[node name="Area2D16" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 288 )
 
-[node name="Obs Simple" parent="." instance=ExtResource( 4 )]
-position = Vector2( 305.675, 113.418 )
+[node name="Area2D39" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 309 )
 
-[node name="Congelador" parent="Obs Simple" instance=ExtResource( 6 )]
-position = Vector2( -6.68021, 336.012 )
+[node name="Area2D38" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 329.43 )
 
-[node name="Congelador2" parent="Obs Simple" instance=ExtResource( 6 )]
-position = Vector2( -6.68021, 80.5822 )
+[node name="Area2D37" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 288 )
+
+[node name="Area2D36" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 309 )
+
+[node name="Area2D35" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 329.43 )
+
+[node name="Area2D4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 226 )
+
+[node name="Area2D48" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 247 )
+
+[node name="Area2D47" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298.995, 267.43 )
+
+[node name="Area2D17" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 226 )
+
+[node name="Area2D46" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 247 )
+
+[node name="Area2D45" parent="." instance=ExtResource( 5 )]
+position = Vector2( 318, 267.43 )
+
+[node name="Area2D44" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 226 )
+
+[node name="Area2D43" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 247 )
+
+[node name="Area2D42" parent="." instance=ExtResource( 5 )]
+position = Vector2( 280, 267.43 )
+
+[node name="Congelador" parent="." instance=ExtResource( 6 )]
+position = Vector2( 298.995, 480 )
+
+[node name="Congelador2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 298.995, 194 )
 
 [node name="Obs Simple2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 455.316, 363.727 )
+
+[node name="Obs L" parent="." instance=ExtResource( 7 )]
+position = Vector2( 360, 128.382 )
+rotation = 3.14159

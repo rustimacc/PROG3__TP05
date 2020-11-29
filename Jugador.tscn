@@ -163,10 +163,10 @@ wait_time = 5.0
 one_shot = true
 
 [node name="BarraCongelado" type="ProgressBar" parent="."]
-margin_left = -27.4604
-margin_top = 26.7248
-margin_right = 27.5396
-margin_bottom = 40.7248
+margin_left = -14.4445
+margin_top = 28.7741
+margin_right = 14.5555
+margin_bottom = 33.7741
 custom_styles/fg = SubResource( 2 )
 max_value = 5.0
 value = 5.0

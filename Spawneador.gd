@@ -7,7 +7,8 @@ var bloque=[preload("res://Obstaculos/Obstaculo1.tscn"),
 			preload("res://Obstaculos/Obstaculo5.tscn"),
 			preload("res://Obstaculos/Obstaculo6.tscn"),
 			preload("res://Obstaculos/Obstaculo7.tscn"),
-			preload("res://Obstaculos/Obstaculo8.tscn")
+			preload("res://Obstaculos/Obstaculo8.tscn"),
+			preload("res://Obstaculos/Obstaculo 9.tscn")
 			]
 #var bloqueCuadrado=preload("res://Obstaculos/Obstaculo2.tscn")
 

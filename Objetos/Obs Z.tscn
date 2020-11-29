@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Tiles/tile018.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tiles/tile094.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Tiles/tile021.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Tiles/tile022.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Tiles/tile038.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Tiles/tile025.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Tiles/tile039.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Tiles/tile153.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Tiles/tile001.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Tiles/tile096.png" type="Texture" id=11]
+
+[node name="Obs Z" type="Node2D"]
+
+[node name="Cuadrado" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, 16 )
+texture = ExtResource( 8 )
+
+[node name="Cuadrado7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, 48 )
+texture = ExtResource( 3 )
+
+[node name="Cuadrado3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 16 )
+texture = ExtResource( 9 )
+
+[node name="Cuadrado9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 16 )
+texture = ExtResource( 2 )
+
+[node name="Cuadrado11" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, -48 )
+texture = ExtResource( 2 )
+
+[node name="Cuadrado13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, -48 )
+texture = ExtResource( 4 )
+
+[node name="Cuadrado14" parent="." instance=ExtResource( 1 )]
+position = Vector2( -80, -48 )
+texture = ExtResource( 5 )
+
+[node name="Cuadrado15" parent="." instance=ExtResource( 1 )]
+position = Vector2( -80, -16 )
+texture = ExtResource( 3 )
+
+[node name="Cuadrado16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 16 )
+texture = ExtResource( 4 )
+
+[node name="Cuadrado17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 48 )
+texture = ExtResource( 11 )
+
+[node name="Cuadrado5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 48 )
+
+[node name="Cuadrado6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 48 )
+texture = ExtResource( 10 )
+
+[node name="Cuadrado8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 48 )
+texture = ExtResource( 10 )
+
+[node name="Cuadrado12" parent="." instance=ExtResource( 1 )]
+position = Vector2( -48, -16 )
+texture = ExtResource( 10 )
+
+[node name="Cuadrado18" parent="." instance=ExtResource( 1 )]
+position = Vector2( -48, -48 )
+texture = ExtResource( 2 )
+
+[node name="Cuadrado4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, -16 )
+texture = ExtResource( 6 )
+
+[node name="Cuadrado2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -16, -16 )
+rotation = -1.5708
+texture = ExtResource( 7 )

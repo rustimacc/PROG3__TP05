@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objetos/cuadrado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/Tiles/tile018.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Tiles/tile017.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Tiles/tile001.png" type="Texture" id=7]
+[ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objetos/Congelador.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
@@ -251,3 +252,219 @@ position = Vector2( 168, 384 )
 
 [node name="Congelador2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 448, 384 )
+
+[node name="Moneda" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 352 )
+
+[node name="Moneda2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 352 )
+
+[node name="Moneda3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 352 )
+
+[node name="Moneda6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 332 )
+
+[node name="Moneda5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 332 )
+
+[node name="Moneda4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 332 )
+
+[node name="Moneda12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 236 )
+
+[node name="Moneda11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 236 )
+
+[node name="Moneda10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 236 )
+
+[node name="Moneda9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 216 )
+
+[node name="Moneda8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 216 )
+
+[node name="Moneda7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 216 )
+
+[node name="Moneda18" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 196 )
+
+[node name="Moneda17" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 196 )
+
+[node name="Moneda16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 196 )
+
+[node name="Moneda15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 150, 176 )
+
+[node name="Moneda14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 168, 176 )
+
+[node name="Moneda13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 187, 176 )
+
+[node name="Moneda36" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 352 )
+
+[node name="Moneda35" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 352 )
+
+[node name="Moneda34" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 352 )
+
+[node name="Moneda33" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 332 )
+
+[node name="Moneda32" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 332 )
+
+[node name="Moneda31" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 332 )
+
+[node name="Moneda30" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 236 )
+
+[node name="Moneda29" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 236 )
+
+[node name="Moneda28" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 236 )
+
+[node name="Moneda27" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 216 )
+
+[node name="Moneda26" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 216 )
+
+[node name="Moneda25" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 216 )
+
+[node name="Moneda24" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 196 )
+
+[node name="Moneda23" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 196 )
+
+[node name="Moneda22" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 196 )
+
+[node name="Moneda21" parent="." instance=ExtResource( 8 )]
+position = Vector2( 430, 176 )
+
+[node name="Moneda20" parent="." instance=ExtResource( 8 )]
+position = Vector2( 448, 176 )
+
+[node name="Moneda19" parent="." instance=ExtResource( 8 )]
+position = Vector2( 467, 176 )
+
+[node name="Moneda45" parent="." instance=ExtResource( 8 )]
+position = Vector2( 374, 216 )
+
+[node name="Moneda44" parent="." instance=ExtResource( 8 )]
+position = Vector2( 392, 216 )
+
+[node name="Moneda43" parent="." instance=ExtResource( 8 )]
+position = Vector2( 411, 216 )
+
+[node name="Moneda42" parent="." instance=ExtResource( 8 )]
+position = Vector2( 374, 196 )
+
+[node name="Moneda41" parent="." instance=ExtResource( 8 )]
+position = Vector2( 392, 196 )
+
+[node name="Moneda40" parent="." instance=ExtResource( 8 )]
+position = Vector2( 411, 196 )
+
+[node name="Moneda39" parent="." instance=ExtResource( 8 )]
+position = Vector2( 374, 176 )
+
+[node name="Moneda38" parent="." instance=ExtResource( 8 )]
+position = Vector2( 392, 176 )
+
+[node name="Moneda37" parent="." instance=ExtResource( 8 )]
+position = Vector2( 411, 176 )
+
+[node name="Moneda69" parent="." instance=ExtResource( 8 )]
+position = Vector2( 318, 216 )
+
+[node name="Moneda68" parent="." instance=ExtResource( 8 )]
+position = Vector2( 336, 216 )
+
+[node name="Moneda67" parent="." instance=ExtResource( 8 )]
+position = Vector2( 355, 216 )
+
+[node name="Moneda66" parent="." instance=ExtResource( 8 )]
+position = Vector2( 318, 196 )
+
+[node name="Moneda65" parent="." instance=ExtResource( 8 )]
+position = Vector2( 336, 196 )
+
+[node name="Moneda64" parent="." instance=ExtResource( 8 )]
+position = Vector2( 355, 196 )
+
+[node name="Moneda63" parent="." instance=ExtResource( 8 )]
+position = Vector2( 318, 176 )
+
+[node name="Moneda62" parent="." instance=ExtResource( 8 )]
+position = Vector2( 336, 176 )
+
+[node name="Moneda61" parent="." instance=ExtResource( 8 )]
+position = Vector2( 355, 176 )
+
+[node name="Moneda57" parent="." instance=ExtResource( 8 )]
+position = Vector2( 262, 216 )
+
+[node name="Moneda56" parent="." instance=ExtResource( 8 )]
+position = Vector2( 280, 216 )
+
+[node name="Moneda55" parent="." instance=ExtResource( 8 )]
+position = Vector2( 299, 216 )
+
+[node name="Moneda54" parent="." instance=ExtResource( 8 )]
+position = Vector2( 262, 196 )
+
+[node name="Moneda53" parent="." instance=ExtResource( 8 )]
+position = Vector2( 280, 196 )
+
+[node name="Moneda52" parent="." instance=ExtResource( 8 )]
+position = Vector2( 299, 196 )
+
+[node name="Moneda51" parent="." instance=ExtResource( 8 )]
+position = Vector2( 262, 176 )
+
+[node name="Moneda50" parent="." instance=ExtResource( 8 )]
+position = Vector2( 280, 176 )
+
+[node name="Moneda49" parent="." instance=ExtResource( 8 )]
+position = Vector2( 299, 176 )
+
+[node name="Moneda81" parent="." instance=ExtResource( 8 )]
+position = Vector2( 206, 216 )
+
+[node name="Moneda80" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 216 )
+
+[node name="Moneda79" parent="." instance=ExtResource( 8 )]
+position = Vector2( 243, 216 )
+
+[node name="Moneda78" parent="." instance=ExtResource( 8 )]
+position = Vector2( 206, 196 )
+
+[node name="Moneda77" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 196 )
+
+[node name="Moneda76" parent="." instance=ExtResource( 8 )]
+position = Vector2( 243, 196 )
+
+[node name="Moneda75" parent="." instance=ExtResource( 8 )]
+position = Vector2( 206, 176 )
+
+[node name="Moneda74" parent="." instance=ExtResource( 8 )]
+position = Vector2( 224, 176 )
+
+[node name="Moneda73" parent="." instance=ExtResource( 8 )]
+position = Vector2( 243, 176 )

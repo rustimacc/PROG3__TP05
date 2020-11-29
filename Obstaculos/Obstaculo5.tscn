@@ -1,16 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objetos/ObstaculoCuadrado.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Obstaculos/Obstaculo1.gd" type="Script" id=2]
 [ext_resource path="res://Objetos/Obs Simple.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objetos/moneda.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objetos/Obs Z.tscn" type="PackedScene" id=5]
 
 [node name="Obstaculo5" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 2 )
-
-[node name="ObstaculoCuadrado" parent="." instance=ExtResource( 1 )]
-position = Vector2( 150.593, 269.861 )
 
 [node name="ObstaculoCuadrado2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 478.443, 427.664 )
@@ -54,6 +52,60 @@ position = Vector2( 352, 288 )
 [node name="Area2D7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 384, 256 )
 
+[node name="Area2D19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 102.748, 256 )
+
+[node name="Area2D20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 120, 256 )
+
+[node name="Area2D21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 136, 256 )
+
+[node name="Area2D22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 136, 272 )
+
+[node name="Area2D23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 118.748, 272 )
+
+[node name="Area2D24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 102.748, 272 )
+
+[node name="Area2D25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 102.748, 288 )
+
+[node name="Area2D26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 118.748, 288 )
+
+[node name="Area2D27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 134.748, 288 )
+
+[node name="Area2D36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 230.748, 192 )
+
+[node name="Area2D35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 248, 192 )
+
+[node name="Area2D34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 264, 192 )
+
+[node name="Area2D33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 264, 208 )
+
+[node name="Area2D32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 246.748, 208 )
+
+[node name="Area2D31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 230.748, 208 )
+
+[node name="Area2D30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 230.748, 224 )
+
+[node name="Area2D29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 246.748, 224 )
+
+[node name="Area2D28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 262.748, 224 )
+
 [node name="Area2D13" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 192 )
 
@@ -71,3 +123,6 @@ position = Vector2( 192, 64 )
 
 [node name="Area2D18" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 32 )
+
+[node name="Obs Z" parent="." instance=ExtResource( 5 )]
+position = Vector2( 182.748, 240 )
